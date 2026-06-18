@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>집에서는, 내 리듬대로 — IKEA 브랜드 숏필름 시리즈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #1a1a1a;
+  --ink:     #2c2c2a;
+  --mid:     #5f5e5a;
+  --muted:   #888780;
+  --border:  #d3d1c7;
+  --border-l:#e8e6e0;
+  --bg:      #f5f4f0;
+  --white:   #ffffff;
+  --page-max: 760px;
+  --gap: 48px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ── */
+.wrap {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border-l);
+}
+.nav-inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.hero {
+  padding: 96px 0 80px;
+  border-bottom: 0.5px solid var(--border-l);
+}
+.hero-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border: 0.5px solid var(--border);
+  border-radius: 100px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.hero-sub {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  font-weight: 300;
+}
+
+/* ── Section ── */
+.section {
+  padding: var(--gap) 0;
+  border-bottom: 0.5px solid var(--border-l);
+}
+.section:last-child { border-bottom: none; }
+
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* ── Key Copy ── */
+.key-copy-box {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+.key-copy-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.key-copy-text {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+/* ── Concept rows ── */
+.concept-rows { display: flex; flex-direction: column; gap: 16px; }
+.concept-row {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+}
+.concept-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 300;
+  min-width: 96px;
+  flex-shrink: 0;
+  padding-top: 3px;
+  border-right: 1.5px solid var(--border);
+  padding-right: 16px;
+}
+.concept-val {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  padding-left: 20px;
+  line-height: 1.4;
+}
+
+/* ── Format grid ── */
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.format-item {
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.format-item-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 6px;
+  font-weight: 300;
+}
+.format-item-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ── Flow steps ── */
+.flow-steps-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.flow-steps { display: flex; flex-direction: column; }
+.flow-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 0.5px solid var(--border-l);
+}
+.flow-step:last-child { border-bottom: none; }
+.step-num {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 300;
+  min-width: 20px;
+  padding-top: 2px;
+}
+.step-body {}
+.step-title { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+.step-desc { font-size: 12px; color: var(--mid); line-height: 1.6; }
+
+/* ── Visual grid ── */
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.visual-item {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.visual-item-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+.visual-item-text {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+.tone-row {
+  margin-top: 20px;
+}
+.tone-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.tone-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tone-pill {
+  font-size: 12px;
+  padding: 5px 13px;
+  border-radius: 100px;
+  background: var(--bg);
+  color: var(--mid);
+  border: 0.5px solid var(--border);
+}
+.tone-pill.cross {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+/* ── Episode grid ── */
+.ep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.ep-card {
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  transition: border-color 0.2s;
+}
+.ep-card:hover { border-color: #aaa9a4; }
+.ep-card-full { grid-column: 1 / -1; }
+
+.ep-num {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 300;
+}
+.ep-animal {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 3px;
+}
+.ep-title-text {
+  font-size: 12px;
+  color: var(--mid);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.ep-fields { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.ep-field { display: flex; gap: 0; font-size: 11.5px; align-items: flex-start; }
+.ep-field-label {
+  color: var(--muted);
+  min-width: 64px;
+  flex-shrink: 0;
+  line-height: 1.7;
+  padding-top: 0.5px;
+  font-weight: 300;
+}
+.ep-field-value { color: var(--mid); line-height: 1.7; flex: 1; }
+
+.ep-story-block { margin-bottom: 16px; }
+.ep-story-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.ep-story-text {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.85;
+}
+
+.ep-divider { height: 0.5px; background: var(--border-l); margin: 14px 0; }
+.ep-copy { font-size: 12px; color: var(--mid); line-height: 1.7; }
+.ep-copy strong { color: var(--ink); font-weight: 500; }
+
+/* Full-width ep inner layout */
+.ep-full-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* ── Ending ── */
+.ending-box {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 52px 40px;
+  text-align: center;
+}
+.ending-body {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 2;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.ending-copy {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.ending-brand {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 0.5px solid var(--border-l);
+  padding: 28px 0;
+  text-align: center;
+}
+.footer-text {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+/* ── Scroll fade-in ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .wrap { padding: 0 20px; }
+  .nav-links { display: none; }
+  .format-grid { grid-template-columns: 1fr 1fr; }
+  .visual-grid { grid-template-columns: 1fr; }
+  .ep-grid { grid-template-columns: 1fr; }
+  .ep-card-full { grid-column: 1; }
+  .ep-full-inner { grid-template-columns: 1fr; }
+  .concept-lbl { min-width: 80px; }
+  .ending-box { padding: 36px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-title">집에서는, 내 리듬대로</span>
+    <ul class="nav-links">
+      <li><a href="#concept">컨셉</a></li>
+      <li><a href="#format">포맷</a></li>
+      <li><a href="#visual">비주얼</a></li>
+      <li><a href="#episodes">에피소드</a></li>
+      <li><a href="#message">메시지</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="wrap">
+  <section class="hero fade-in">
+    <div class="hero-meta">
+      <span class="tag">IKEA</span>
+      <span class="tag">브랜드 숏필름 시리즈</span>
+      <span class="tag">미니어처 애니메이션</span>
+    </div>
+    <h1 class="hero-title">집에서는,<br>내 리듬대로</h1>
+    <p class="hero-sub">BRANDED SHORT FILM SERIES</p>
+  </section>
+</div>
+
+<!-- 핵심 컨셉 -->
+<div class="wrap">
+  <section id="concept" class="section fade-in">
+    <div class="section-label">핵심 컨셉</div>
+    <div class="key-copy-box">
+      <div class="key-copy-label">메인 카피</div>
+      <div class="key-copy-text">집에서는, 내 리듬대로.</div>
+    </div>
+    <div class="concept-rows">
+      <div class="concept-row">
+        <div class="concept-lbl">핵심 컨셉 문장</div>
+        <div class="concept-val">집은 나를 다시 켜는 곳.</div>
+      </div>
+      <div class="concept-row">
+        <div class="concept-lbl">서브 컨셉</div>
+        <div class="concept-val">집에 오면, 나는 다시 내 습성대로 산다.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 영상 포맷 -->
+<div class="wrap">
+  <section id="format" class="section fade-in">
+    <div class="section-label">영상 포맷</div>
+    <div class="format-grid">
+      <div class="format-item">
+        <div class="format-item-label">분량</div>
+        <div class="format-item-value">편당 10초 내외</div>
+      </div>
+      <div class="format-item">
+        <div class="format-item-label">형식</div>
+        <div class="format-item-value">에피소드 시리즈</div>
+      </div>
+      <div class="format-item">
+        <div class="format-item-label">스타일</div>
+        <div class="format-item-value">미니어처 애니메이션</div>
+      </div>
+    </div>
+
+    <div class="flow-steps-title">에피소드 구성 흐름</div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">리듬을 잃은 바깥</div>
+          <div class="step-desc">사회의 속도, 역할, 규칙에 맞춰 살아가는 동물 캐릭터</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">집으로의 귀환</div>
+          <div class="step-desc">바깥과 집 안의 전환점</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">공간과 제품을 통한 감각 회복</div>
+          <div class="step-desc">IKEA 제품이 놓인 공간 안에서 본래의 감각을 되찾는 과정</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-title">본래의 습성으로 살아나기</div>
+          <div class="step-desc">캐릭터가 자신만의 리듬을 되찾는 장면</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">05</div>
+        <div class="step-body">
+          <div class="step-title">제품 정보 노출</div>
+          <div class="step-desc">제품명·가격 그래픽 (IKEA 포맷 + 애니메이션 세계관 접목)</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">06</div>
+        <div class="step-body">
+          <div class="step-title">엔딩 카피</div>
+          <div class="step-desc">집에서는, 내 리듬대로. — IKEA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 비주얼 스타일 -->
+<div class="wrap">
+  <section id="visual" class="section fade-in">
+    <div class="section-label">비주얼 스타일</div>
+    <div class="visual-grid">
+      <div class="visual-item">
+        <div class="visual-item-label">캐릭터</div>
+        <div class="visual-item-text">직립보행, 사람 비율. 동물 특징 유지, 의상·행동은 사람의 일상에 가깝게</div>
+      </div>
+      <div class="visual-item">
+        <div class="visual-item-label">질감</div>
+        <div class="visual-item-text">털, 패브릭, 나무, 조명 등 실제 미니어처 세트처럼 촉각적 분위기</div>
+      </div>
+      <div class="visual-item">
+        <div class="visual-item-label">제품 연출</div>
+        <div class="visual-item-text">미니어처 태그, 팝업 그래픽, 캐릭터와 상호작용하는 형태로 자연스럽게</div>
+      </div>
+      <div class="visual-item">
+        <div class="visual-item-label">톤</div>
+        <div class="visual-item-text">따뜻하되 감성 과잉 없이. 귀엽지만 유치하지 않게. 낯설고 재미있게</div>
+      </div>
+    </div>
+    <div class="tone-row">
+      <div class="tone-label">카피 어휘 방향</div>
+      <div class="tone-pills">
+        <span class="tone-pill">리듬</span>
+        <span class="tone-pill">방식</span>
+        <span class="tone-pill">속도</span>
+        <span class="tone-pill">감각</span>
+        <span class="tone-pill cross">힐링</span>
+        <span class="tone-pill cross">위로</span>
+        <span class="tone-pill cross">휴식</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 에피소드 라인업 -->
+<div class="wrap">
+  <section id="episodes" class="section fade-in">
+    <div class="section-label">에피소드 라인업</div>
+    <div class="ep-grid">
+
+      <!-- 고슴도치 -->
+      <div class="ep-card">
+        <div class="ep-num">EP.</div>
+        <div class="ep-animal">🦔 고슴도치</div>
+        <div class="ep-title-text">오늘도 조금 뾰족했던 나에게</div>
+        <div class="ep-fields">
+          <div class="ep-field">
+            <span class="ep-field-label">동물 습성</span>
+            <span class="ep-field-value">위협을 느끼면 가시를 세운다. 예민하고 방어적이지만, 사실은 섬세하고 부드러운 감각을 좋아한다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">바깥 상태</span>
+            <span class="ep-field-value">많은 사람을 상대하며 하루 종일 긴장한 상태. 회의, 출근길, 사람들 사이의 부딪힘 속에서 계속 가시를 세우고 있다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">집의 공간</span>
+            <span class="ep-field-value">거실 / 침실</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">리듬 매개체</span>
+            <span class="ep-field-value">러그, 쿠션, 담요, 소파, 조명, 침구</span>
+          </div>
+        </div>
+        <div class="ep-story-block">
+          <div class="ep-story-label">이야기</div>
+          <div class="ep-story-text">집에 들어온 고슴도치는 천천히 외투를 벗고, 조명을 켜고, 러그 위에 발을 올린다. 딱딱하게 서 있던 가시가 부드러운 패브릭을 만나 조금씩 내려앉는다. 소파와 담요 사이에 몸을 묻은 고슴도치는 비로소 뾰족했던 하루에서 벗어나 자신의 리듬으로 돌아온다.</div>
+        </div>
+        <div class="ep-divider"></div>
+        <div class="ep-copy">오늘도 조금 뾰족했지만,<br><strong>집에서는, 내 리듬대로.</strong></div>
+      </div>
+
+      <!-- 수달 -->
+      <div class="ep-card">
+        <div class="ep-num">EP.</div>
+        <div class="ep-animal">🦦 수달</div>
+        <div class="ep-title-text">다시 물 만난 듯</div>
+        <div class="ep-fields">
+          <div class="ep-field">
+            <span class="ep-field-label">동물 습성</span>
+            <span class="ep-field-value">물을 좋아하고 장난기가 많다. 손을 잘 쓰고, 놀이하듯 움직이는 감각이 강하다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">바깥 상태</span>
+            <span class="ep-field-value">건조한 사무실, 딱딱한 일정, 정해진 규칙 안에서 말라붙은 듯한 하루를 보낸다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">집의 공간</span>
+            <span class="ep-field-value">욕실 / 주방</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">리듬 매개체</span>
+            <span class="ep-field-value">욕실 매트, 수건, 욕실 선반, 컵, 식기, 싱크대, 조리도구</span>
+          </div>
+        </div>
+        <div class="ep-story-block">
+          <div class="ep-story-label">이야기</div>
+          <div class="ep-story-text">집에 돌아온 수달은 욕실 문을 열고 물소리를 듣는 순간 눈빛이 살아난다. 수건을 꺼내고, 욕실 매트 위에서 발을 구르고, 주방에서 컵과 식기를 만지며 다시 생기를 찾는다. 집 안의 물기와 소리, 촉감들이 수달을 본래의 리듬으로 되돌린다.</div>
+        </div>
+        <div class="ep-divider"></div>
+        <div class="ep-copy">말라붙은 하루도,<br><strong>집에서는, 내 리듬대로.</strong></div>
+      </div>
+
+      <!-- 토끼 -->
+      <div class="ep-card">
+        <div class="ep-num">EP.</div>
+        <div class="ep-animal">🐰 토끼</div>
+        <div class="ep-title-text">작은 굴의 방식</div>
+        <div class="ep-fields">
+          <div class="ep-field">
+            <span class="ep-field-label">동물 습성</span>
+            <span class="ep-field-value">경계심이 많고 안전한 공간을 좋아한다. 작고 아늑한 굴 같은 장소에서 안정감을 느낀다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">바깥 상태</span>
+            <span class="ep-field-value">소음, 사람들의 시선, 예측할 수 없는 상황 속에서 계속 긴장한다. 하루 종일 주변을 살피느라 에너지를 많이 쓴다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">집의 공간</span>
+            <span class="ep-field-value">침실 / 작은 방 / 드레스룸</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">리듬 매개체</span>
+            <span class="ep-field-value">침대, 커튼, 수납 박스, 작은 조명, 러그, 이불</span>
+          </div>
+        </div>
+        <div class="ep-story-block">
+          <div class="ep-story-label">이야기</div>
+          <div class="ep-story-text">토끼는 집에 들어오자마자 커튼을 치고, 작은 조명을 켠다. 침대와 수납 박스, 이불이 만들어내는 아늑한 공간 안으로 들어가면서 긴장이 풀린다. 집은 토끼에게 숨는 공간이 아니라, 자기 속도로 다시 움직일 수 있는 작은 굴이 된다.</div>
+        </div>
+        <div class="ep-divider"></div>
+        <div class="ep-copy">조심스러웠던 하루 끝,<br><strong>집에서는, 내 리듬대로.</strong></div>
+      </div>
+
+      <!-- 고양이 -->
+      <div class="ep-card">
+        <div class="ep-num">EP.</div>
+        <div class="ep-animal">🐱 고양이</div>
+        <div class="ep-title-text">혼자 궁금한 방식</div>
+        <div class="ep-fields">
+          <div class="ep-field">
+            <span class="ep-field-label">동물 습성</span>
+            <span class="ep-field-value">호기심이 많고, 혼자만의 공간과 자기만의 거리를 중요하게 여긴다. 높은 곳이나 창가처럼 주변을 조용히 관찰할 수 있는 자리를 좋아한다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">바깥 상태</span>
+            <span class="ep-field-value">사람 많은 공간에서 계속 말을 걸리고, 불려 다니고, 정해진 자리와 속도에 맞춰 움직인다. 겉으로는 무심한 척하지만 귀와 꼬리 끝이 계속 예민하게 반응한다.</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">집의 공간</span>
+            <span class="ep-field-value">거실 / 창가 / 작은 서재 코너</span>
+          </div>
+          <div class="ep-field">
+            <span class="ep-field-label">리듬 매개체</span>
+            <span class="ep-field-value">1인 의자, 낮은 테이블, 창가 선반, 쿠션, 커튼, 작은 조명, 러그, 책장</span>
+          </div>
+        </div>
+        <div class="ep-story-block">
+          <div class="ep-story-label">이야기</div>
+          <div class="ep-story-text">집에 돌아온 고양이는 큰 조명을 끄고, 커튼을 살짝 열고, 창가 옆 1인 의자에 조용히 앉는다. 작은 테이블 위의 컵, 책장 위의 물건, 창밖의 움직임을 자기 속도로 하나씩 바라보며 호기심이 다시 살아난다.</div>
+        </div>
+        <div class="ep-divider"></div>
+        <div class="ep-copy">혼자 있고 싶었던 마음도,<br><strong>집에서는, 내 리듬대로.</strong></div>
+      </div>
+
+      <!-- 올빼미 (full width) -->
+      <div class="ep-card ep-card-full">
+        <div class="ep-num">EP.</div>
+        <div class="ep-animal">🦉 올빼미</div>
+        <div class="ep-title-text">밤이 켜지면 나도 선명해진다</div>
+        <div class="ep-full-inner">
+          <div class="ep-fields">
+            <div class="ep-field">
+              <span class="ep-field-label">동물 습성</span>
+              <span class="ep-field-value">야행성이다. 낮보다 밤에 더 또렷하고 조용한 집중력을 발휘한다.</span>
+            </div>
+            <div class="ep-field">
+              <span class="ep-field-label">바깥 상태</span>
+              <span class="ep-field-value">밝은 낮, 빠른 시간표, 사람 많은 공간 속에서 피곤하고 흐릿한 상태로 하루를 보낸다.</span>
+            </div>
+            <div class="ep-field">
+              <span class="ep-field-label">집의 공간</span>
+              <span class="ep-field-value">서재 / 책상 / 침실</span>
+            </div>
+            <div class="ep-field">
+              <span class="ep-field-label">리듬 매개체</span>
+              <span class="ep-field-value">책상 조명, 플로어 조명, 책상, 의자, 서랍장, 선반</span>
+            </div>
+          </div>
+          <div class="ep-story-block">
+            <div class="ep-story-label">이야기</div>
+            <div class="ep-story-text">올빼미는 낮 동안 계속 졸리고 흐릿하다. 하지만 집에 돌아와 방 안의 조명을 낮추고 책상 조명을 켜는 순간, 눈동자가 또렷해진다. 모두가 잠드는 밤, 올빼미는 책상 앞에서 자신만의 시간을 시작한다.</div>
+          </div>
+        </div>
+        <div class="ep-divider"></div>
+        <div class="ep-copy">모두가 잠든 뒤에도,<br><strong>집에서는, 내 리듬대로.</strong></div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- 시리즈 메시지 -->
+<div class="wrap">
+  <section id="message" class="section fade-in">
+    <div class="ending-box">
+      <div class="ending-body">
+        집은 모두에게 같은 의미의 공간이 아니다.<br>
+        누군가에게 집은 가시를 내려놓는 곳이고,<br>
+        누군가에게는 다시 물 만난 듯 살아나는 곳이다.<br>
+        누군가에게는 밤이 켜지는 곳이고,<br>
+        누군가에게는 느린 속도를 되찾는 곳이다.<br><br>
+        IKEA는 그런 다양한 리듬이 각자의 집 안에서<br>
+        가능해지도록 돕는다.
+      </div>
+      <div class="ending-copy">집에서는, 내 리듬대로.</div>
+      <div class="ending-brand">IKEA</div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <p class="footer-text">IKEA · 브랜드 숏필름 시리즈 기획안 · 내부 검토용</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
